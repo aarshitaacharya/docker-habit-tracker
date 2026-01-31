@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  habit-tracker:
+    image: docker-habit-tracker
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - HABIT_FILE=/app/data/habits.json
+    volumes:
+      - ./data:/app/data
